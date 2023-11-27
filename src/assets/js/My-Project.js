@@ -1,3 +1,35 @@
+function getDistanceTime(time) {
+    const timeNow = new Date().getTime(); // jam sekarang miliseconds
+    const timePosted = time;
+
+    const distance = timeNow - timePosted; // miliseconds
+
+    // Math :
+    // floor -> dibulatkan ke bawah, ex : 8.6 -> 8
+    // round -> dibulatkan angka terdekat, ex : 8.3 -> 8
+    // ceil -> dibulatkan ke atas, ex : 8.3 -> 9
+
+    const distanceSeconds = Math.floor(distance / 1000);
+    const distanceMinutes = Math.floor(distance / 1000 / 60);
+    const distanceHours = Math.floor(distance / 1000 / 60 / 60);
+    const distanceDay = Math.floor(distance / 1000 / 60 / 60 / 24);
+
+    console.log("distanceSeconds", distanceSeconds);
+    console.log("distanceMinutes", distanceMinutes);
+    console.log("distanceHours", distanceHours);
+    console.log("distanceDay", distanceDay);
+
+    if (distanceDay > 0) {
+        return `${distanceDay} day ago`;
+    } else if (distanceHours > 0) {
+        return `${distanceHours} hours ago`;
+    } else if (distanceMinutes > 0) {
+        return `${distanceMinutes} minutes ago`;
+    } else {
+        return `${distanceSeconds} seconds ago `;
+    }
+}
+
 let dataBlog = [];
 
 function submitData(event) {
@@ -27,11 +59,16 @@ function submitData(event) {
                 content: descriptionValue,
                 technologies: technologiesValue,
                 image: imageUrl,
-                postAt: "09 November 2023",
-                author: "Ravano Akbar Widodo"
+                postAt: new Date(),
+                author: "Ravano Akbar Widodo",
+                nodeJs: true,
+                reactJs: true,
+                nextJs: false,
+                typescript: false,
             }
 
             dataBlog.push(blog);
+            console.log("dataBlog", dataBlog)
             renderBlog();
         }
     }
@@ -71,3 +108,7 @@ function renderBlog() {
         </div>`;
     }
 }
+
+setInterval(function() {
+    renderBlog()
+}, 1000)
