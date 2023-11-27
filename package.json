@@ -1,0 +1,15 @@
+{
+  "name": "personal-web-day-10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Ravano Akbar Widodo",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "express": "^4.18.2"
+  }
+}
