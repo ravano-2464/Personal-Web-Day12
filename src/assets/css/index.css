@@ -33,6 +33,8 @@
 
 .nav-link a {
     color: black;
+    white-space: nowrap;
+    display: block;
     text-decoration: none;
 }
 

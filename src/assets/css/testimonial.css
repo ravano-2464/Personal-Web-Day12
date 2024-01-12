@@ -23,7 +23,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 .btn-contact:hover,
 .btn-submit:hover {
     background-color: #333;
@@ -225,6 +224,7 @@ nav ul li {
     color: white;
     cursor: pointer;
 }
+
 
 @media only screen and (max-width: 900px) {
     .testimonial {
