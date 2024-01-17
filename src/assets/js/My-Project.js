@@ -83,28 +83,33 @@ function renderMyProject() {
             </div>
             <div class="My-Project-content">
                 <div class="btn-group">
-                    <button class="btn-edit">Edit Post</button>
-                    <button class="btn-post">Delete Post</button>
+                    <button class="btn-edit"><i class="fa fa-pencil"></i> Edit Post</button>
+                    <button class="btn-post"><i class="fa fa-trash"></i> Delete Post</button>
                 </div>
                 <h1>
-                    <a href="/My-Project-detail/:id" target="_blank">${dataMyProject[index].title}</a>
+                    <a href="My-Project.html" target="_blank"><i class="fa fa-desktop"></i> ${dataMyProject[index].title}</a>
                 </h1>
-                <h3>Duration : ${dataMyProject[index].duration}</h3>
+                <h3><i class="far fa-clock"></i> Duration : ${dataMyProject[index].duration}</h3>
                 <br>
                 <div class="detail-My-Project-content">
-                    ${dataMyProject[index].postAt} | ${dataMyProject[index].author}
+                    <i class="far fa-calendar-alt"></i> ${dataMyProject[index].postAt}
+                    <br>
+                    <i class="fa fa-user-circle"></i> ${dataMyProject[index].author}
                 </div>
+                <br>
                 <p style="text-align: center;">
-                   ${dataMyProject[index].content}
+                <i class="fas fa-info-circle"></i>  ${dataMyProject[index].content}
                 </p>
                 <br>
                 <div class="technologies" style="text-align: center;">
-                    <label>Technologies :</label>
+                    <label><i class="fas fa-cogs"></i> Technologies :</label>
                     <ul style="list-style: none; padding: 0;">
+                    <br>
                         ${dataMyProject[index].technologies.map((tech) => `<li>${tech}</li>`).join('')}
                     </ul>
                 </div>
                 <div class="card-icons">
+                <br>
                      <i class="fa-brands fa-google-play fa-xl"></i>
                      <i class="fa-brands fa-android fa-xl"></i>
                      <i class="fa-brands fa-java fa-lg"></i>

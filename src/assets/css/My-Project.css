@@ -48,36 +48,44 @@
     display: block;
 }
 
-.text-checkbox {
-    font-size: 14px;
+.My-Project-list {
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-.checkbox div {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.checkbox input {
-    margin-right: 8px;
-}
-
-.form-container {
-    max-width: 600px;
-    margin: auto;
-}
-
-form {
-    display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.button-group {
     text-align: center;
-}
+   }
+    
+    .text-checkbox {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+   }
+
+    .checkbox div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+   }
+
+    .checkbox input {
+        margin-right: 8px;
+   }
+
+    .form-container {
+        max-width: 600px;
+        margin: auto;
+   }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+   }
+
+    .button-group {
+        text-align: center;
+   }
 
 .My-Project-form {
     padding: 50px 0;
@@ -204,7 +212,7 @@ form {
     background-color: #f7f7f7;
     color: #333;
     padding: 10px;
-    width: 130px;
+    width: 30%;
     font-size: 16px;
     border-radius: 10px;
     text-decoration: none;
@@ -257,6 +265,7 @@ form {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .My-Project-detail-container h1 {
@@ -308,4 +317,65 @@ form {
 
 .button-group {
     text-align: center;
+}
+
+.nav-collapse {
+    width: 30%;
+}
+
+#hamburger-button {
+    display: none;
+}
+
+.hamburger-nav-container {
+    font-size: 23px;
+    list-style-type: none;
+    display: none;
+}
+
+.hamburger-nav-container a {
+    color: white;
+    border: 2px solid white;
+    background-color: #9a9a9a;
+    text-align: center;
+    padding: 10px;
+}
+
+.hamburger-nav-container .active {
+    text-decoration: none;
+    color: #fff;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .nav-collapse {
+        display: none;
+        width: 5px;
+    }
+    
+    #hamburger-button {
+        display: block;
+    }
+
+    .hamburger-nav-container {
+        font-size: 23px;
+        display: none;
+        flex-direction: column;
+    }
 }

@@ -43,7 +43,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 25px;
+    margin-right: 8px;
     font-size: 20px;
 }
 
@@ -62,7 +62,7 @@ nav ul li .active {
 .nav-right {
     flex: 50%;
     text-align: end;
-    margin-right: 25px;
+    margin-right: 8px;
 }
 
 .nav-link a {
@@ -85,7 +85,7 @@ nav {
     background-color: #ebeaea;
     display: flex;
     align-items: center;
-    height: 10vh;
+    height: 20%;
 }
 
 nav ul {
@@ -95,7 +95,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 25px;
+    margin-right: 8px;
 }
 
 .nav-left {
@@ -105,7 +105,7 @@ nav ul li {
 .nav-right:hover {
     flex: 50%;
     text-align: end;
-    margin-right: 25px;
+    margin-right: 8px;
 }
 
 .nav-right a {
@@ -114,7 +114,7 @@ nav ul li {
     padding: 10px;
     width: 130px;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 5px;
     text-decoration: none;
     text-align: center;
     border: 2px solid #333;
@@ -140,14 +140,11 @@ nav ul li {
 }
 
 .hamburger-nav-container a {
-    text-decoration: none;
-    color: #fff;
+    color: white;
+    border: 2px solid white;
     background-color: #9a9a9a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     padding: 10px;
-    border: 1px solid #fff;
 }
 
 .active:hover {
@@ -225,7 +222,6 @@ nav ul li {
     cursor: pointer;
 }
 
-
 @media only screen and (max-width: 900px) {
     .testimonial {
         width: 40%;
@@ -242,7 +238,6 @@ nav ul li {
     #barsmenu {
         display: block;
     }
-
 
     .item-collapse {
         display: none;
