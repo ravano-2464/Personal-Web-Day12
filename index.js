@@ -33,7 +33,7 @@ app.post('/add-My-Project', addMyProject);
 app.get('/My-Project-detail/:id', MyProjectDetail);
 app.get('/testimonial', testimonial);
 
-app.get('/update-My-project/:id', updateMyProjectView);
+app.get('/update-My-Project/:id', updateMyProjectView);
 app.post('/update-My-Project/:id', updateMyProject);
 
 app.get('/delete-My-Project/:id', deleteMyProject);

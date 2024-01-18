@@ -112,8 +112,9 @@
                             <input type="file" id="inputImage" show />
                         </div>
                     </div>
-                    <div class="button-group">
-                        <button>Update My Project</button>
+                    <form method="post" action="/update-My-Project/{{data.id}}">
+                        <div class="button-group">
+                           <button type="submit"><i class="fa fa-paper-plane"></i> Update My Project</button>
                     </div>
                 </form>
             </div>
