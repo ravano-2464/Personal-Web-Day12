@@ -93,24 +93,23 @@
         <div class="My-Project-form">
             <div class="form-container">
                 <form method="post" action="/update-My-Project">
-                    <h1>Update Post My Project</h1>
+                    <h1><i class="fa fa-plus-circle"></i> Update Post My Project</h1>
                     <input type="hidden" name="id" value="{{data.id}}" />
                     <div>
-                        <label for="inputTitle">Title</label>
+                        <label for="inputTitle"><i class="fas fa-project-diagram"></i> Project Name</label>
                         <input type="text" id="inputTitle" name="title" value="{{data.title}}" />
                     </div>
                     <div>
-                        <label for="inputContent">Content</label>
+                        <label for="inputContent"><i class="fas fa-info-circle"></i> Description</label>
                         <textarea id="inputContent" name="content">{{data.content}}</textarea>
                     </div>
                     <div>
-                        <label>Upload Image</label>
+                        <label for="inputImage"><i class="fa fa-camera"></i> Choose Image Or Files</label>
                         <div class="input-My-Project-image-group">
-                            <label for="inputImage">
-                                <p>Attach File</p>
-                                <img src="/assets/icon/file.png" alt="file" />
+                            <label for="inputImage" class="custom-file-upload">
+                                <p class="text-label"><i class="fa fa-folder-open"></i> Attach Image Or Files</p>
                             </label>
-                            <input type="file" id="inputImage" hidden />
+                            <input type="file" id="inputImage" show />
                         </div>
                     </div>
                     <div class="button-group">
