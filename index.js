@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const { title } = require('process');
 const app = express();
 const port = 7000;
 
@@ -53,17 +52,22 @@ function addMyProject(req, res) {
     console.log("Start Date:", startDate);
     console.log("End Date:", endDate);
     console.log("description:", description);
-    console.log("technologies", technologies)
+    console.log("technologies", technologies);
   
+    data.push({
+        title,
+        startDate,
+        endDate,
+        description,
+        technologies,
+    });
+
     res.redirect('/My-Project');
-  }
-  
+}
 
 function MyProjectDetail(req, res) {
     const { id } = req.params;
-
     const projectDetailsData = data[id];
-
     res.render('project-detail', { data: projectDetailsData });
 }
 
@@ -81,21 +85,15 @@ function updateMyProjectView(req, res) {
 
 function updateMyProject(req, res) {
     const { id } = req.params;
-    const { projectName, startDate, endDate, technologies, description } = req.body;
+    const { title, startDate, endDate, technologies, description } = req.body;
     const technologiesArray = Array.isArray(technologies) ? technologies : [technologies];
 
-    const technologiesIcon = technologiesArray?.map((tech) => ({
-        name: tech,
-        icon: technologiesIcons[tech],
-    }));
-
     data[+id] = {
-        projectName,
+        title,
         startDate,
         endDate,
         technologies: technologiesArray,
         description,
-        technologiesIcon,
     };
 
     res.redirect('/My-Project');

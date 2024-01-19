@@ -96,6 +96,7 @@
             <a href="/add-My-Project" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add New My Project</a>
         </div>
         <div id="contents">
+            <form method="get" action="/add-My-Project"></form>
             {{#each data}}
                 <div class="card mb-3 w-100">
                     <div class="row g-0">
@@ -105,16 +106,20 @@
                         <div class="col-md-6">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <a href="/My-Project-detail/:id" target="_blank"><i class="fa fa-desktop"></i> {{this.title}}</a>
+                                    <a href="/My-Project-detail/:id" target="_blank"><i class="fa fa-desktop"></i> {{data.id}} {{data.title}}</a>
                                 </h5>
                                 <p>
-                                    <i class="fa fa-calendar"></i> 12 Juli 2021 22:30 WIB 
+                                    <i class="fa fa-calendar"></i> {{data.startDate}} | {{data.endDate}}
                                     <br>
                                     <i class="fa fa-user"></i> Ravano Akbar Widodo
                                 </p>
-                                <p class="card-text"><i class="fas fa-info-circle"></i> {{this.content}}</p>
+                                <p class="card-text"><i class="fas fa-info-circle"></i> {{data.description}}</p>
                                 <p class="card-text"><small class="text-body-secondary"><i class="far fa-clock"></i> 1 seconds ago
-                                    </small></p>
+                                   </small>
+                                </p>
+
+                                <p><i class="fas fa-cogs"></i> Technologies</pd>
+
                             </div>
                         </div>
                         <div class="col-md-2 d-flex" style="height: fit-content;">
