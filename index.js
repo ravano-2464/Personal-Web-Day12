@@ -24,6 +24,7 @@ app.get('/update-My-Project/:id', updateMyProjectView);
 app.post('/update-My-Project/:id', updateMyProject);
 
 app.get('/delete-My-Project/:id', deleteMyProject);
+app.post('/delete-My-Project/:id', deleteMyProject);
 
 function home(req, res) {
     res.render('index');
@@ -109,8 +110,12 @@ function updateMyProject(req, res) {
 
 function deleteMyProject(req, res) {
     const { id } = req.params;
+    const index = +id;
 
-    data.splice(id, 1);
+    if (index >= 0 && index < data.length) {
+        data.splice(index, 1);
+    }
+
     res.redirect('/My-Project');
 }
 
