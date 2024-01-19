@@ -68,7 +68,7 @@ function addMyProject(req, res) {
 function MyProjectDetail(req, res) {
     const { id } = req.params;
     const projectDetailsData = data[id];
-    res.render('project-detail', { data: projectDetailsData });
+    res.render('My-Project-detail', { data: projectDetailsData });
 }
 
 function testimonials(req, res) {

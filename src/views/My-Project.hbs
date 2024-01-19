@@ -8,7 +8,7 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="/assets/icon/dumbways.ico" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/My-Project.css"/>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -19,7 +19,7 @@
         }
 
         .btn-primary, 
-        .btn-secondary{
+        .btn-secondary {
             background-color: #f7f7f7 !important;
             color: #333;
             padding: 10px;
@@ -106,26 +106,26 @@
                         <div class="col-md-6">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <a href="/My-Project-detail/:id" target="_blank"><i class="fa fa-desktop"></i> {{data.id}} {{data.title}}</a>
+                                    <a href="/My-Project-detail/{{@index}}" target="_blank"><i class="fa fa-desktop"></i> {{this.title}}</a>
                                 </h5>
                                 <p>
-                                    <i class="fa fa-calendar"></i> {{data.startDate}} | {{data.endDate}}
+                                    <i class="fa fa-calendar"></i> {{this.startDate}} | {{this.endDate}}
                                     <br>
                                     <i class="fa fa-user"></i> Ravano Akbar Widodo
                                 </p>
-                                <p class="card-text"><i class="fas fa-info-circle"></i> {{data.description}}</p>
+                                <p class="card-text"><i class="fas fa-info-circle"></i> {{this.description}}</p>
                                 <p class="card-text"><small class="text-body-secondary"><i class="far fa-clock"></i> 1 seconds ago
                                    </small>
                                 </p>
 
-                                <p><i class="fas fa-cogs"></i> Technologies</pd>
+                                <p><i class="fas fa-cogs"></i> Technologies</p>
 
                             </div>
                         </div>
                         <div class="col-md-2 d-flex" style="height: fit-content;">
                             <a href="/update-My-Project/{{@index}}" class="btn btn-secondary"><i class="fa fa-pencil"></i> Edit post</a>
                             <form method="post" action="/delete-My-Project/{{@index}}">
-                            <button class="btn btn-primary"><i class="fa fa-trash"></i> Delete post</button>
+                                <button class="btn btn-primary"><i class="fa fa-trash"></i> Delete post</button>
                             </form>
                         </div>
                     </div>
