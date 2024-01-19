@@ -93,41 +93,41 @@
     <div class="My-Project">
         <div class="My-Project-form">
             <div class="form-container">
-                <form onsubmit="submitData(event)">
+                <form method="post" action="/add-My-Project">
                     <h1><i class="fas fa-plus-circle"></i> ADD MY PROJECT</h1>
-                    <form action="/My-Project" method="POST" class="form"></form>
                     <div>
                         <label for="inputMyProject"><i class="fas fa-project-diagram"></i> Project Name</label>
-                        <input type="text" id="inputMyProject" name="Project Name" class="form-control" />
+                        <input type="text" id="ProjectName" name="title" />
                     </div>
                     <div style="display: flex; gap: 20px;">
                         <div>
                             <label for="startDate"><i class="fa fa-calendar"></i> Start Date</label>
-                            <input type="date" id="startDate" name="startDate" class="form-control" />
+                            <input type="date" id="startDate" name="startDate" />
                         </div>
                         <div>
                             <label for="endDate"><i class="fa fa-calendar"></i> End Date</label>
-                            <input type="date" id="endDate" name="endDate" class="form-control" />
+                            <input type="date" id="endDate" name="endDate" />
                         </div>
                     </div>
                     <div>
-                        <label for="inputContent"><i class="fas fa-info-circle"></i> Description</label>
-                        <textarea id="inputContent"></textarea>
+                        <label for="description"><i class="fas fa-info-circle"></i> Description</label>
+                        <textarea id="description" name="description"></textarea>
                     </div>
                     <div>
                         <h2><i class="fas fa-cogs"></i> Technologies</h2>
+                        
                     </div>
                     <div class="checkbox">
                         <div>
                             <input type="checkbox" id="inputNodeJs"
-                                style="margin-top: 15px; border-radius: 15px;" value="Node Js">
+                                style="margin-top: 15px; border-radius: 15px;" value="Node Js" name="technologies" />
                             <label class="text-checkbox" for="inputNodeJs">
                                 <i class="fa-brands fa-node-js" style="margin-right: 8px;"></i> Node Js
                             </label>
                         </div>
                         <div>
                             <input type="checkbox" id="inputNextJs"
-                                style="margin-top: 15px; border-radius: 15px;" value="Next Js">
+                                style="margin-top: 15px; border-radius: 15px;" value="Next Js" name="technologies" />
                             <label class="text-checkbox" for="inputNextJs">
                                 <img src="/assets/icon/Next-Js.ico" width="16" height="16"
                                     style="margin-right: 8px;"></i> Next Js
@@ -135,14 +135,14 @@
                         </div>
                         <div>
                             <input type="checkbox" id="inputReactJs"
-                                style="margin-top: 15px; border-radius: 15px;" value="React Js" />
+                                style="margin-top: 15px; border-radius: 15px;" value="React Js"name="technologies" />
                             <label class="text-checkbox" for="inputReactJs">
                                 <i class="fa-brands fa-react" style="margin-right: 8px;"></i> React Js
                             </label>
                         </div>
                         <div>
                             <input type="checkbox" id="inputTypeScript"
-                                style="margin-top: 15px; border-radius: 15px;" value="TypeScript" />
+                                style="margin-top: 15px; border-radius: 15px;" value="TypeScript" name="technologies" />
                             <label class="text-checkbox" for="inputTypeScript">
                                 <img src="/assets/icon/TypeScript.ico" width="16" height="16"
                                     style="margin-right: 8px;"></i> TypeScript
@@ -179,8 +179,6 @@
         </div>
 
     </div>
-
-<script>console.log('{{data.projectName}}')</script>
 
     <script src="/assets/js/nav.js"></script>
     <script src="/assets/js/My-Project.js"></script>
