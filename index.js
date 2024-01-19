@@ -80,7 +80,7 @@ function updateMyProjectView(req, res) {
     const editProjectData = data[+id];
     editProjectData.id = id;
 
-    res.render('editProject', { data: editProjectData });
+    res.render('My-Project', { data: editProjectData });
 }
 
 function updateMyProject(req, res) {
@@ -107,5 +107,5 @@ function deleteMyProject(req, res) {
 }
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Server Berjalan Di Port ${port}`);
 });
