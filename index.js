@@ -78,25 +78,35 @@ function testimonials(req, res) {
 function updateMyProjectView(req, res) {
     const { id } = req.params;
     const editProjectData = data[+id];
-    editProjectData.id = id;
 
-    res.render('My-Project', { data: editProjectData });
+    // Pastikan editProjectData ada sebelum mencoba mengakses propertinya
+    if (editProjectData) {
+        editProjectData.id = id;
+        res.render('update-My-Project', { data: editProjectData });
+    } else {
+        // Handle jika data tidak ditemukan, misalnya dengan me-redirect atau menampilkan pesan error
+        res.redirect('/My-Project'); // Atau res.render('error') dengan pesan bahwa data tidak ditemukan
+    }
 }
 
 function updateMyProject(req, res) {
     const { id } = req.params;
     const { title, startDate, endDate, technologies, description } = req.body;
     const technologiesArray = Array.isArray(technologies) ? technologies : [technologies];
+e
+    if (data[+id]) {
+        data[+id] = {
+            title,
+            startDate,
+            endDate,
+            technologies: technologiesArray,
+            description,
+        };
 
-    data[+id] = {
-        title,
-        startDate,
-        endDate,
-        technologies: technologiesArray,
-        description,
-    };
-
-    res.redirect('/My-Project');
+        res.redirect('/My-Project');
+    } else {
+        res.redirect('/My-Project');
+    }
 }
 
 function deleteMyProject(req, res) {
