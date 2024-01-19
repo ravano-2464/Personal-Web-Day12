@@ -92,8 +92,8 @@
     <div class="My-Project">
         <div class="My-Project-form">
             <div class="form-container">
-                <form method="post" action="/update-My-Project">
-                    <h1><i class="fa fa-plus-circle"></i> Update Post My Project</h1>
+                <form method="post" action="/update-My-Project/">
+                    <h1><i i class="fa fa-pencil"></i> Update Post My Project</h1>
                     <input type="hidden" name="id" value="{{data.id}}" />
                     <div>
                         <label for="inputTitle"><i class="fas fa-project-diagram"></i> Project Name</label>
@@ -112,9 +112,11 @@
                             <input type="file" id="inputImage" show />
                         </div>
                     </div>
-                    <form method="post" action="/update-My-Project/{{data.id}}">
+                    <div>
                         <div class="button-group">
+                            <form method="post" action="/My-Project/{{@index}}"></form>
                            <button type="submit"><i class="fa fa-paper-plane"></i> Update My Project</button>
+                           </form>
                     </div>
                 </form>
             </div>

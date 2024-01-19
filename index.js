@@ -9,20 +9,7 @@ app.set("views", path.join(__dirname, 'src/views'));
 app.use("/assets", express.static(path.join(__dirname, 'src/assets')));
 app.use(express.urlencoded({ extended: false }));
 
-let data = [
-    {
-        title: "Title 1",
-        content: "Content 1"
-    },
-    {
-        title: "Title 2",
-        content: "Content 2"
-    },
-    {
-        title: "Title 3",
-        content: "Content 3"
-    }
-];
+let data = [];
 
 app.get('/', home);
 app.get('/contact', contact);
@@ -31,7 +18,7 @@ app.get('/add-My-Project', addMyProjectView);
 app.post('/add-My-Project', addMyProject);
 
 app.get('/My-Project-detail/:id', MyProjectDetail);
-app.get('/testimonial', testimonial);
+app.get('/testimonial', testimonials);
 
 app.get('/update-My-Project/:id', updateMyProjectView);
 app.post('/update-My-Project/:id', updateMyProject);
@@ -47,7 +34,7 @@ function contact(req, res) {
 }
 
 function MyProject(req, res) {
-    res.render('My-Project', { data });
+    res.render('My-Project', { data, title: "My Project" });
 }
 
 function addMyProjectView(req, res) {
@@ -55,41 +42,59 @@ function addMyProjectView(req, res) {
 }
 
 function addMyProject(req, res) {
-    const { title, content } = req.body;
-
-    console.log("Title :", title);
-    console.log("Content :", content);
-
-    data.push({ title, content });
-
+    const title = req.body.title;
+    const startDate = req.body.startDate;
+    const endDate = req.body.endDate;
+    const description = req.body.description;
+    const technologies = req.body.technologies;
+  
+    console.log("Project Name:", title);
+    console.log("Start Date:", startDate);
+    console.log("End Date:", endDate);
+    console.log("description:", description);
+    console.log("technologies", technologies)
+  
     res.redirect('/My-Project');
-}
+  }
+  
 
 function MyProjectDetail(req, res) {
     const { id } = req.params;
 
-    const projectData = data[id];
+    const projectDetailsData = data[id];
 
-    res.render('My-Project-detail', { data: projectData });
+    res.render('project-detail', { data: projectDetailsData });
+}
+
+function testimonials(req, res) {
+    res.render('testimonial');
 }
 
 function updateMyProjectView(req, res) {
     const { id } = req.params;
-    const projectData = data[id];
+    const editProjectData = data[+id];
+    editProjectData.id = id;
 
-    res.render('update-My-Project', { data: projectData });
+    res.render('editProject', { data: editProjectData });
 }
 
 function updateMyProject(req, res) {
-    const { title, content, id } = req.body;
+    const { id } = req.params;
+    const { projectName, startDate, endDate, technologies, description } = req.body;
+    const technologiesArray = Array.isArray(technologies) ? technologies : [technologies];
 
-    console.log("Id :", id);
-    console.log("Title :", title);
-    console.log("Content :", content);
+    const technologiesIcon = technologiesArray?.map((tech) => ({
+        name: tech,
+        icon: technologiesIcons[tech],
+    }));
 
-    data[parseInt(id)] = {
-        title,
-        content,
+    data[+id] = {
+        projectName,
+        startDate,
+        endDate,
+        technologies: technologiesArray,
+        description,
+        technologiesIcon,
     };
 
     res.redirect('/My-Project');
@@ -102,10 +107,6 @@ function deleteMyProject(req, res) {
     res.redirect('/My-Project');
 }
 
-function testimonial(req, res) {
-    res.render('testimonial');
-}
-
 app.listen(port, () => {
-    console.log(`Server berjalan di port ${port}`);
+    console.log(`Example app listening on port ${port}`);
 });
