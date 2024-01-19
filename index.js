@@ -91,7 +91,7 @@ function updateMyProject(req, res) {
     const { id } = req.params;
     const { title, startDate, endDate, technologies, description } = req.body;
     const technologiesArray = Array.isArray(technologies) ? technologies : [technologies];
-e
+
     if (data[+id]) {
         data[+id] = {
             title,
