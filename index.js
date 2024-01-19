@@ -79,13 +79,11 @@ function updateMyProjectView(req, res) {
     const { id } = req.params;
     const editProjectData = data[+id];
 
-    // Pastikan editProjectData ada sebelum mencoba mengakses propertinya
     if (editProjectData) {
         editProjectData.id = id;
         res.render('update-My-Project', { data: editProjectData });
     } else {
-        // Handle jika data tidak ditemukan, misalnya dengan me-redirect atau menampilkan pesan error
-        res.redirect('/My-Project'); // Atau res.render('error') dengan pesan bahwa data tidak ditemukan
+        res.redirect('/My-Project'); 
     }
 }
 
