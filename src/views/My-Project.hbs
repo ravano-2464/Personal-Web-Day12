@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
+   <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
         * {
@@ -19,7 +19,7 @@
         }
 
         .btn-primary, 
-        .btn-secondary {
+        .btn-secondary{
             background-color: #f7f7f7 !important;
             color: #333;
             padding: 10px;
@@ -29,6 +29,7 @@
             text-decoration: none;
             text-align: center;
             border: 2px solid #333;
+            cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
@@ -123,10 +124,14 @@
                             </div>
                         </div>
                         <div class="col-md-2 d-flex" style="height: fit-content;">
-                            <a href="/update-My-Project/{{@index}}" class="btn btn-secondary" style="width: 200px; padding: 10px;"><i class="fa fa-pencil"></i> Edit post</a>
-                            <form method="get" action="/delete-My-Project/{{@index}}">
-                                <button class="btn btn-primary"><i class="fa fa-trash"></i> Delete post</button>
-                            </form>
+                            <button class="btn btn-secondary">
+                               <i class="fa fa-pencil" ></i>
+                               <a href="/update-My-Project/{{@index}}" style="color: black; text-decoration: none;">Edit Post My Project</a>
+                            </button>
+                            <button class="btn btn-primary">
+                               <i class="fa fa-trash" ></i>
+                               <a href="/delete-My-Project/{{@index}}" style="color: black; text-decoration: none;">Delete Post My Project</a>
+                            </button>
                         </div>
                     </div>
                 </div>
