@@ -6,15 +6,15 @@ function submitData() {
     const inputMessage = document.getElementById("inputMessage").value;
 
     if (inputName === "") {
-        alert('Name must be filled out');
+        alert('Name Must Be Filled Out!!!');
     } else if (inputEmail === "") {
-        alert('Email must be filled out');
+        alert('Email Must Be Filled Out!!!');
     } else if (inputPhone === "") {
-        alert('Phone number must be filled out');
+        alert('Phone Number Must Be Filled Out!!!');
     } else if (inputSubject === "") {
-        alert('Subject must be filled out');
+        alert('Subject Must Be Filled Out!!!');
     } else if (inputMessage === "") {
-        alert('Message must be filled out');
+        alert('Message Must Be Filled Out!!!');
     } else {
        
         console.log(`Name: ${inputName}\nEmail: ${inputEmail}\nPhone: ${inputPhone}\nSubject: ${inputSubject}\nMessage: ${inputMessage}`);
