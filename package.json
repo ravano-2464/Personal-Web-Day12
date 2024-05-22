@@ -1,7 +1,7 @@
 {
-  "name": "personal-web-day-10",
+  "name": "personal-web-day-12",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal Web Day 12",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
